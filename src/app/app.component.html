@@ -13,5 +13,11 @@ showValue="false"
 [showPercent]="true"
 step="10"
 (input)="testSlider($event)"></econ-slider>
-
+<p>Test form fields</p>
+<div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your email</mat-label>
+    <input matInput placeholder="pat@example.com" value="email" required>
+  </mat-form-field>
+</div>
 <router-outlet></router-outlet>

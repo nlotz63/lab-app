@@ -28,6 +28,13 @@ $lab-app-theme: mat.define-light-theme((
   )
 ));
 
+@include mat.core();
+@include mat.strong-focus-indicators((
+  border-style: solid,
+  border-width: 1px,
+  border-radius: 2px,
+));
+
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.

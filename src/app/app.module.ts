@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BusPubLibModule } from 'busPub-lib';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { BusPubLibModule } from 'busPub-lib';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    MatFormFieldModule,
     MatInputModule,
     BusPubLibModule
   ],
