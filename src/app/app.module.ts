@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BusPubLibModule } from 'busPub-lib';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSliderModule,
     MatFormFieldModule,
     MatInputModule,
-    BusPubLibModule
+    BusPubLibModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

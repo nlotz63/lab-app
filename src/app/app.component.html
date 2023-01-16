@@ -1,23 +1,40 @@
 <p>Page set up for testing library components.</p>
 <label  id="slider-label">Lower limit</label>
-<mat-slider min="0" max="200" discrete aria-labelledby="slider-label">
-  <input title="Upper" matSliderThumb value="100">
+<mat-slider min="13000" max="17000" step="100" discrete aria-labelledby="slider-label" >
+  <input title="Upper" matSliderThumb value="13000" (input)="testSlider($event);modelService.updateModels([1], ['qty'], [$event])">
 </mat-slider>
 
 <econ-slider
 label="Price"
-[min]="50"
-[max]="250"
-value="100"
+[min]="13000"
+[max]="16000"
+value="13000"
 showValue="false"
 [showPercent]="true"
 step="10"
-(input)="testSlider($event)"></econ-slider>
+(input)="testSlider($event);modelService.updateModels([1], ['qty'], [$event])"></econ-slider>
 <p>Test form fields</p>
 <div class="example-container">
   <mat-form-field appearance="fill">
     <mat-label>Enter your email</mat-label>
     <input matInput placeholder="pat@example.com" value="email" required>
   </mat-form-field>
+</div>
+
+<mat-slide-toggle>Slide me!</mat-slide-toggle>
+<p>Watch the test value change: <span [econHighlight]="testValue">{{testValue}}</span></p>
+<div>
+  <h2>Let's test out a little math here.</h2>
+  <p econMath>
+    \( 6 \times 2 = 12\)
+  </p>
+  <p [econMath]="eq1">
+
+  </p>
+  <p [econMath]="eq2"></p>
+</div>
+
+<div style="width: 700px" class="model-container">
+  <div id="applet01"></div>
 </div>
 <router-outlet></router-outlet>

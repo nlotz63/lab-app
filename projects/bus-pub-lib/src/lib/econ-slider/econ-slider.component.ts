@@ -1,3 +1,4 @@
+import { KeyValuePipe } from '@angular/common';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
@@ -33,10 +34,10 @@ export class EconSliderComponent implements OnInit {
     this.sliderPercent(initialValue);
   }
 
-  newInput(value: object) {
+  newInput(value: any) {
     this.input.emit(value);
   }
-  newChange(value: object) {
+  newChange(value: any) {
     this.change.emit(value);
   }
   sliderPercent(value: any ) {
@@ -46,7 +47,6 @@ export class EconSliderComponent implements OnInit {
       if (value) {
        let sliderValue = typeof value === 'number' ? value:  value.value
         this.valueText = `${((sliderValue - min) / (max - min) * 100).toFixed(1)} percent`;
-        console.log(this.valueText);
       }
 
     } else {
