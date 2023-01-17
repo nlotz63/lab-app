@@ -40,12 +40,12 @@ export class EconSliderComponent implements OnInit {
   newChange(value: any) {
     this.change.emit(value);
   }
-  sliderPercent(value: any ) {
+  sliderPercent(value: any) {
     let min = Number(this.min);
     let max = Number(this.max);
     if (this.showPercent) {
       if (value) {
-       let sliderValue = typeof value === 'number' ? value:  value.value
+       let sliderValue = typeof value === 'number' ? value:  value.target.value
         this.valueText = `${((sliderValue - min) / (max - min) * 100).toFixed(1)} percent`;
       }
 
