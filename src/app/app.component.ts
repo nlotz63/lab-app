@@ -13,6 +13,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   time = 2;
   eq1 = '$$ C\\times (1 + \\frac{r}{100} )^n$$';
   eq2 = `$$ $1,000(1+${this.rate}/100)^{${this.time}}= $$`;
+  min = 13000;
 
   model01 = {
     id: 'fig4.5a',

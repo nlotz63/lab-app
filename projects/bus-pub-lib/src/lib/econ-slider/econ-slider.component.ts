@@ -9,10 +9,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class EconSliderComponent implements OnInit {
 
-  @Input() min: number = 0;
-  @Input() max: number = 100;
-  @Input() step: string = '';
-  @Input() value: string | number = '';
+  @Input() min: number | string = 0;
+  @Input() max: number | string = 100;
+  @Input() step: number | string = 1;
+  @Input() value: number | string = 50;
   @Input() showValue: string = '';
   @Input() label: string = '';
   @Input() displayValue: string | number = '';
