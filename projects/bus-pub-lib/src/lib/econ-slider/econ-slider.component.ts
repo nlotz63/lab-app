@@ -22,8 +22,9 @@ export class EconSliderComponent implements OnInit {
   @Input() showPercent: boolean = false;
   @Input() title: string = 'slider';
 
-  @Output() change = new EventEmitter();
-  @Output() input = new EventEmitter();
+  @Output() dragStart = new EventEmitter();
+  @Output() dragEnd = new EventEmitter();
+  @Output() valueChange = new EventEmitter();
 
 
 
@@ -31,28 +32,38 @@ export class EconSliderComponent implements OnInit {
 
   ngOnInit() {
     let initialValue = Number(this.value);
-    this.sliderPercent(initialValue);
+    if(this.showPercent) this.sliderPercent(initialValue, 0);
   }
 
-  newInput(value: any) {
-    this.input.emit(value);
+  newValueChange(value: any) {
+    this.valueChange.emit(value);
+    if (this.showPercent) {
+      let timer = setTimeout(() => {
+        this.sliderPercent(value, 0);
+      }, 0);
+    //  clearTimeout(timer);
+    }
   }
-  newChange(value: any) {
-    this.change.emit(value);
+
+  newDragEnd(event: any) {
+    this.dragEnd.emit(event);
   }
-  sliderPercent(value: any) {
+
+  newDragStart(event: any) {
+    this.dragStart.emit(event);
+  }
+
+
+
+  sliderPercent(event: any, delay: number) {
     let min = Number(this.min);
     let max = Number(this.max);
-    if (this.showPercent) {
-      if (value) {
-       let sliderValue = typeof value === 'number' ? value:  value.target.value
-        this.valueText = `${((sliderValue - min) / (max - min) * 100).toFixed(1)} percent`;
+    let value = Number(event);
+    setTimeout(() => {
+      this.valueText = `${((value - min) / (max - min) * 100).toFixed(1)} percent`;
+      }, delay);
+
       }
 
-    } else {
-      return;
-    }
-
- }
 
 }

@@ -1,18 +1,18 @@
 <p>Page set up for testing library components.</p>
 <label  id="slider-label">Lower limit</label>
 <mat-slider min="13000" max="17000" step="100" discrete aria-labelledby="slider-label" >
-  <input title="Upper" matSliderThumb value="13000" (input)="testSlider($event);modelService.updateModels([1], ['qty'], [$event])">
+  <input title="Upper" matSliderThumb value="13000" (valueChange)="testSlider($event);modelService.updateModels([1], ['qty'], [$event])">
 </mat-slider>
 
 <econ-slider
 label="Price"
 [min]="min"
 max="16000"
-value="13000"
+value="14000"
 showValue="false"
 [showPercent]="true"
-step="10"
-(input)="testSlider($event);modelService.updateModels([1], ['qty'], [$event])"></econ-slider>
+step="100"
+(valueChange)="testSlider($event);modelService.updateModels([1], ['qty'], [$event])"></econ-slider>
 <p>Test form fields</p>
 <div class="example-container">
   <mat-form-field appearance="fill">

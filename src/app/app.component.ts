@@ -61,7 +61,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
 
   public testSlider(event: any | null) {
-    let value = event.target.value;
+    console.log(event);
+    let value = event;
     this.testValue = value;
     this.rate = value / 100;
     this.eq2 = `$$ $1,000(1+${this.rate}/100)^{${this.time}}= $$`;

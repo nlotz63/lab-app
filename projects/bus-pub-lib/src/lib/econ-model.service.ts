@@ -65,7 +65,6 @@ export class EconModelService {
     for (let i = 0; i < numberModels; i++) {
       const nextModel = id[i];
       model = this._getModel(nextModel);
-      if (typeof value[i] === 'object') value[i] = value[i].target.value;
       model.setValue(object[i], value[i]);
     }
 
