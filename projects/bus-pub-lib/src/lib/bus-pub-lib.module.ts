@@ -4,6 +4,7 @@ import { EconSliderComponent } from './econ-slider/econ-slider.component';
 import { BusPubLibComponent } from './bus-pub-lib.component';
 import {EconMathDirective} from './econ-math.directive';
 import { EconHighlightDirective } from './econ-highlight.directive';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +17,8 @@ import { EconHighlightDirective } from './econ-highlight.directive';
     EconHighlightDirective
   ],
   imports: [
-    MatSliderModule
+    MatSliderModule,
+    FormsModule
   ],
   exports: [
     BusPubLibComponent,
