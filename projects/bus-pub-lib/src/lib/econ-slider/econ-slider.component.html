@@ -1,4 +1,4 @@
 <label [id]="id" >{{label}} </label>
 <mat-slider  [min]="min" [max]="max" [step]="step" [discrete]="showValue" >
-<input tyep="range" showPercent title="{{label}}" [value]="value" matSliderThumb [attr.aria-valuetext]="valueText" (dragStart)="newDragStart($event)" (dragEnd)="newDragEnd($event)" (valueChange)="newValueChange($event)">
+<input tyep="range" showPercent title="{{label}}" [(ngModel)]="value" matSliderThumb [attr.aria-valuetext]="valueText" (dragStart)="newDragStart($event)" (dragEnd)="newDragEnd($event)" (input)="newValueChange()" (change)="newChange()">
 </mat-slider><span> {{this.displayValue}} {{this.units}}</span>

@@ -14,6 +14,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   eq1 = '$$ C\\times (1 + \\frac{r}{100} )^n$$';
   eq2 = `$$ $1,000(1+${this.rate}/100)^{${this.time}}= $$`;
   min = 13000;
+  max = 17000;
+  value =13000;
 
   model01 = {
     id: 'fig4.5a',
@@ -61,7 +63,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
 
   public testSlider(event: any | null) {
-    console.log(event);
     let value = event;
     this.testValue = value;
     this.rate = value / 100;

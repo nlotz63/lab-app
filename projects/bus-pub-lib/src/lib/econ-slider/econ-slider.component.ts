@@ -1,4 +1,3 @@
-import { KeyValuePipe } from '@angular/common';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
@@ -25,6 +24,7 @@ export class EconSliderComponent implements OnInit {
   @Output() dragStart = new EventEmitter();
   @Output() dragEnd = new EventEmitter();
   @Output() valueChange = new EventEmitter();
+  @Output() change = new EventEmitter();
 
 
 
@@ -35,11 +35,11 @@ export class EconSliderComponent implements OnInit {
     if(this.showPercent) this.sliderPercent(initialValue, 0);
   }
 
-  newValueChange(value: any) {
-    this.valueChange.emit(value);
+  newValueChange() {
+    this.valueChange.emit(this.value);
     if (this.showPercent) {
       let timer = setTimeout(() => {
-        this.sliderPercent(value, 0);
+        this.sliderPercent(this.value, 0);
       }, 0);
     //  clearTimeout(timer);
     }
@@ -53,7 +53,9 @@ export class EconSliderComponent implements OnInit {
     this.dragStart.emit(event);
   }
 
-
+  newChange() {
+    this.change.emit(this.value);
+ }
 
   sliderPercent(event: any, delay: number) {
     let min = Number(this.min);
