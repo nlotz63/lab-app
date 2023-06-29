@@ -24,7 +24,7 @@ export class EconSliderComponent implements OnInit {
   @Output() dragStart = new EventEmitter();
   @Output() dragEnd = new EventEmitter();
   @Output() valueChange = new EventEmitter();
-  @Output() change = new EventEmitter();
+  @Output() econChange = new EventEmitter();
 
 
 
@@ -54,7 +54,7 @@ export class EconSliderComponent implements OnInit {
   }
 
   newChange() {
-    this.change.emit(this.value);
+    this.econChange.emit(this.value);
  }
 
   sliderPercent(event: any, delay: number) {

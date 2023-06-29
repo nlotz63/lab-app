@@ -13,7 +13,11 @@ label="Price"
 showValue="false"
 [showPercent]="true"
 step="100"
-(valueChange)="testSlider($event);modelService.updateModels([1], ['qty'], [$event])"></econ-slider>
+#slider
+(valueChange)="testSlider($event);modelService.updateModels([1], ['qty'], [$event])"
+(change)="testChange(slider.value)"
+
+></econ-slider>
 <p>Test form fields</p>
 <div class="example-container">
   <mat-form-field appearance="fill">
