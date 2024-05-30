@@ -9,7 +9,8 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
-$lab-app-theme: mat.define-theme((
+// Define the theme object.
+$my-app-theme: mat.define-theme((
   color: (
     theme-type: light,
     primary: mat.$azure-palette,
@@ -20,20 +21,11 @@ $lab-app-theme: mat.define-theme((
   )
 ));
 
-@include mat.strong-focus-indicators((
-  border-style: solid,
-  border-width: 1px,
-  border-radius: 2px,
-));
-
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-
 :root {
-  @include mat.all-component-themes($lab-app-theme);
-  @include mat.strong-focus-indicators-theme($lab-app-theme);
-
+  @include mat.all-component-themes($my-app-theme);
 }
 
 // Comment out the line below if you want to use the pre-defined typography utility classes.
@@ -43,7 +35,6 @@ $lab-app-theme: mat.define-theme((
 // Comment out the line below if you want to use the deprecated `color` inputs.
 // @include mat.color-variants-backwards-compatibility($theme);
 /* You can add global styles to this file, and also import other style files */
-
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
