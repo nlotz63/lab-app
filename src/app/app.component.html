@@ -1,17 +1,16 @@
 <p>Page set up for testing library components.</p>
 <label  id="slider-label">Lower limit</label>
 <mat-slider min="13000" max="17000" step="100" discrete aria-labelledby="slider-label" >
-  <input title="Upper" matSliderThumb [value]="value" (valueChange)="testSlider($event);modelService.updateModels([1], ['qty'], [$event])">
+  <input title="Upper" matSliderThumb [value]="13000" (valueChange)="testSlider($event);modelService.updateModels([1], ['qty'], [$event])">
 </mat-slider>
-{{value}}
-
-<econ-slider
-label="Price"
+    <econ-slider
+label="Bananas {{1-(17000 - value)/4000 | percent}}"
+displayValue="apple {{ (17000 - value) / 4000 | percent}}"
 [min]="min"
 [max]="max"
-[value]="value"
+[(value)]="value"
 showValue="false"
-[showPercent]="true"
+[showPercent]="false"
 step="100"
 #slider
 (valueChange)="testSlider($event);modelService.updateModels([1], ['qty'], [$event])"

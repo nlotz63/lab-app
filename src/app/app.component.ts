@@ -67,6 +67,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.testValue = value;
     this.rate = value / 100;
     this.eq2 = `$$ $1,000(1+${this.rate}/100)^{${this.time}}= $$`;
+    console.log(this.value);
 
   }
   

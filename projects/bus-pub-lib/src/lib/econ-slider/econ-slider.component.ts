@@ -32,17 +32,20 @@ export class EconSliderComponent implements OnInit {
 
   ngOnInit() {
     let initialValue = Number(this.value);
-    if(this.showPercent) this.sliderPercent(initialValue, 0);
+    this.newValueChange();  
   }
 
   newValueChange() {
     this.valueChange.emit(this.value);
-    if (this.showPercent) {
-      let timer = setTimeout(() => {
-        this.sliderPercent(this.value, 0);
-      }, 0);
-    //  clearTimeout(timer);
-    }
+    const timer = setTimeout(() => {
+      if (this.showPercent) {
+          this.sliderPercent(this.value);
+      } else if (this.units !== '' && this.displayValue === '') {
+        this.valueText = `${this.value} ${this.units}`;
+      } else  {
+        this.valueText = `${this.displayValue} ${this.units}`;
+      }
+      }, 25);
   }
 
   newDragEnd(event: any) {
@@ -57,13 +60,11 @@ export class EconSliderComponent implements OnInit {
     this.econChange.emit(this.value);
  }
 
-  sliderPercent(event: any, delay: number) {
+  sliderPercent(event: any) {
     let min = Number(this.min);
     let max = Number(this.max);
     let value = Number(event);
-    setTimeout(() => {
       this.valueText = `${((value - min) / (max - min) * 100).toFixed(1)} percent`;
-      }, delay);
 
       }
 
