@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-interactive {
+    //   width: 300px;
+    flex: 1 1 10%;
+    margin: 5px;
+}
+
+.content-container {
+    flex: 1 1 90%
+}

@@ -133,38 +133,44 @@
         }
       }
     },
-    "my-app": {
+    "demo-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/my-app",
-      "sourceRoot": "projects/my-app/src",
+      "root": "projects/demo-app",
+      "sourceRoot": "projects/demo-app/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-app",
-            "index": "projects/my-app/src/index.html",
-            "browser": "projects/my-app/src/main.ts",
+            "outputPath": "dist/demo-app",
+            "index": "projects/demo-app/src/index.html",
+            "browser": "projects/demo-app/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/my-app/tsconfig.app.json",
+            "tsConfig": "projects/demo-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/my-app/public"
+                "input": "projects/demo-app/public"
               }
             ],
             "styles": [
-              "projects/my-app/src/styles.scss"
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "projects/demo-app/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "projects/demo-app/src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "projects/demo-app/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -194,10 +200,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-app:build:production"
+              "buildTarget": "demo-app:build:production"
             },
             "development": {
-              "buildTarget": "my-app:build:development"
+              "buildTarget": "demo-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -212,16 +218,17 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/my-app/tsconfig.spec.json",
+            "tsConfig": "projects/demo-app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/my-app/public"
+                "input": "projects/demo-app/public"
               }
             ],
             "styles": [
-              "projects/my-app/src/styles.scss"
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "projects/demo-app/src/styles.scss"
             ],
             "scripts": []
           }

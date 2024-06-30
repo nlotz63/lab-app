@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="card-container">
+    <mat-card class="card-interactive">
+     <mat-card-header>
+       <mat-card-title>Demo Interactive 1</mat-card-title>
+       <mat-card-subtitle>OM Example with Least Squares Regression</mat-card-subtitle>
+     </mat-card-header>
+     <mat-card-content>
+       This example demonstrates how users can interact directly with the chart in an accessible way.
+     </mat-card-content>
+     <mat-card-actions>
+      <a [routerLink]="['/demo-01']" routerLinkActive="router-link-active"><button mat-button>View the Interactive</button></a>
+     </mat-card-actions>
+    </mat-card>
+    <mat-card class="card-interactive">
+     <mat-card-header>
+       <mat-card-title>Demo Interactive 2</mat-card-title>
+       <mat-card-subtitle>Miller Figure 2.1</mat-card-subtitle>
+     </mat-card-header>
+     <mat-card-content>
+       This example demoonstrates how users can interact directly with the chart in an accessible way.
+     </mat-card-content>
+     <mat-card-actions>
+      <a [routerLink]="['/demo-02']" routerLinkActive="router-link-active"><button mat-button>View the Interactive</button></a>
+     </mat-card-actions>
+    </mat-card>
+ </div>
+ <div class="content-container">
+  <router-outlet />
+</div>
+ 
+</div>
